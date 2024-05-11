@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+    color: black;
+
+    /* Here we styling for hole page  */
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #533A7B;
+    min-height: 100vh;
+
+    /* Here i am styling for bady section  */
+}
+
+.container{
+    position: relative;
+
+    /* Here i set postion for container */
+}
+
+
+.clock{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #CBD2D0;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Here I'm styling for clock where actual clock will show */
+}
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 12px;
+    text-align: center;
+
+    /* Here we are styling span tag so that number will align with clock */
+
+    /* var(--i): This is a CSS custom property (or CSS variable) denoted by --i. 
+    The value of this property is used in the calculation. It allows dynamic 
+    adjustment of the rotation angle based on the value assigned to --i. */
+
+
+    /* inset: The inset property is a shorthand property that combines the values 
+    for top, right, bottom, and left offsets in a single declaration. 
+    It specifies the distance of the element from each side of its containing block. */
+}
+
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+
+    /* This one is for numbers */
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: black;
+    z-index: 2;
+
+    /* .clock::before: This selector targets the pseudo-element (::before) of 
+    elements with the class .clock. Pseudo-elements are used to style certain 
+    parts of an element, such as its before or after content. */
+
+
+
+    /* here we are styling for clock center where small dot are placved */
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    /* here styling for hand class where clock min,hrs,sec are there */
+}
+
+.hand i {
+    position: absolute;
+    background-color: var(--clr);
+    width: 4px;
+    height: var(--h);
+    border-radius: 8px;
+
+    /* Here we are styling hand i tag where all clock pointer will styling  */
+} 
